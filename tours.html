@@ -1,0 +1,136 @@
+# Writing an HTML version of the provided PDF content to /mnt/data/tour.html
+html = """<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Studio Shodwe - Explore the World</title>
+<style>
+  :root{--accent:#0b6b8f;--muted:#666;--card:#fff;--bg:#f6f8fa}
+  body{font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; margin:0; background:var(--bg); color:#111;}
+  .container{max-width:980px; margin:28px auto; padding:24px;}
+  header{display:flex;align-items:center;gap:16px;}
+  .logo{width:84px;height:84px;background:linear-gradient(135deg,var(--accent),#2aa198);border-radius:12px;display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:18px}
+  h1{margin:0;font-size:28px}
+  .subtitle{color:var(--muted);margin-top:6px}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:22px}
+  .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(20,30,40,0.06)}
+  .center{text-align:center}
+  .stats{display:flex;gap:12px;justify-content:space-between;margin-top:12px}
+  .stat{flex:1;padding:12px;border-radius:10px;background:linear-gradient(180deg,#fff,#fafcfe);text-align:center}
+  h2{margin-top:0}
+  ul{margin:8px 0 0 18px}
+  .price{font-size:20px;font-weight:700;color:var(--accent)}
+  .packages{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  footer{margin-top:26px;padding:14px;text-align:center;color:var(--muted);font-size:14px}
+  @media (max-width:720px){.grid,.packages{grid-template-columns:1fr} .logo{width:64px;height:64px}}
+</style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">SS</div>
+      <div>
+        <h1>Studio Shodwe — Explore the World</h1>
+        <div class="subtitle">Presented by Liceria Group</div>
+      </div>
+    </header>
+
+    <section class="card" style="margin-top:18px">
+      <h2>Our Mission</h2>
+      <p>Our mission is to inspire and empower travelers to explore the world with confidence, curiosity, and respect — offering authentic experiences, useful resources, and trusted guidance that connect people to cultures, landscapes, and adventures around the globe.</p>
+    </section>
+
+    <div class="grid" style="margin-top:16px">
+      <div class="card">
+        <h2>Our Services</h2>
+        <ul>
+          <li>Destination Guides – Detailed information about popular and offbeat travel spots.</li>
+          <li>Travel Planning Assistance – Help with itineraries, budgeting, and best travel seasons.</li>
+          <li>Hotel & Stay Recommendations – Curated lists of hotels, resorts, and homestays.</li>
+          <li>Flight & Transport Booking Support – Guidance for booking flights, trains, and local transport.</li>
+          <li>Cultural & Food Experiences – Tips on local traditions, festivals, and cuisines.</li>
+          <li>Adventure & Activities Booking – Arranging tours, trekking, water sports, and more.</li>
+          <li>Travel Safety Tips – Guidance on safe travel practices and emergency info.</li>
+          <li>Customized Travel Packages – Personalized plans based on traveler preferences.</li>
+        </ul>
+        <div class="stats" style="margin-top:14px">
+          <div class="stat"><div style="font-size:18px;font-weight:700">200+</div><div style="font-size:12px;color:var(--muted)">Destinations</div></div>
+          <div class="stat"><div style="font-size:18px;font-weight:700">1K+</div><div style="font-size:12px;color:var(--muted)">Travellers</div></div>
+          <div class="stat"><div style="font-size:18px;font-weight:700">50+</div><div style="font-size:12px;color:var(--muted)">Packages</div></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Why Choose Us?</h2>
+        <ul>
+          <li>🌍 <strong>Global Expertise</strong> – Our team has first-hand experience traveling across continents.</li>
+          <li>🧭 <strong>Personalized Travel Plans</strong> – Every trip is tailored to your needs and preferences.</li>
+          <li>💰 <strong>Best Value for Money</strong> – We find affordable deals without compromising quality.</li>
+          <li>📌 <strong>Local Insights</strong> – Get insider tips that guidebooks often miss.</li>
+          <li>⚡ <strong>Fast & Reliable Support</strong> – Quick responses and 24/7 assistance during your trip.</li>
+          <li>✅ <strong>Trusted by Travelers</strong> – Hundreds of happy clients and positive reviews.</li>
+        </ul>
+      </div>
+    </div>
+
+    <section class="card" style="margin-top:18px">
+      <h2>Popular Packages</h2>
+      <div class="packages">
+        <div class="card" style="padding:12px">
+          <h3>Adventure Tours</h3>
+          <p>Destinations: Paris, Rome, Amsterdam, Venice</p>
+          <p>Includes flights, hotels, guided city tours, and breakfast.</p>
+          <p><strong>Duration:</strong> 10 Days / 9 Nights</p>
+          <p class="price">Starting from ₹1,85,000 per person</p>
+        </div>
+
+        <div class="card" style="padding:12px">
+          <h3>Honeymoon</h3>
+          <p><strong>Duration:</strong> 5 Days / 4 Nights</p>
+          <p class="price">Starting from ₹85,000 per couple</p>
+        </div>
+
+        <div class="card" style="padding:12px">
+          <h3>Family Vacation</h3>
+          <p><strong>Duration:</strong> 5 Days / 4 Nights</p>
+          <p class="price">Starting from ₹85,000 for a family of 4</p>
+          <p>Houseboat stay, Ayurvedic massages, Munnar tea gardens. Includes hotels and breakfast.</p>
+        </div>
+
+        <div class="card" style="padding:12px">
+          <h3>Beach & Water Sports</h3>
+          <p>Water sports, beach resorts, and local sightseeing.</p>
+          <p>Includes the stay, breakfast and guided tour.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card" style="margin-top:18px">
+      <h2>How To Book</h2>
+      <ol>
+        <li>Visit the IRCTC Tourism official site and login to your account.</li>
+        <li>Navigate to <em>Holidays → Packages</em>, or use the search bar for destinations (e.g., “devotional”, “pilgrimage”).</li>
+        <li>Browse through the offerings—these include air, train, and land tours, complete with transport, accommodation, meals, and optional add-ons like guides or insurance.</li>
+        <li>Select the package you like and proceed to book.</li>
+        <li>Make payment using credit/debit card, net banking, or UPI. A confirmation voucher will be generated instantly.</li>
+      </ol>
+    </section>
+
+    <section class="card" style="margin-top:18px">
+      <h2>Contact Us</h2>
+      <p><strong>Phone:</strong> 0000-9999-1111</p>
+      <p><strong>Website:</strong> <a href="https://www.explore.com" target="_blank" rel="noopener">www.explore.com</a></p>
+      <p><strong>Email:</strong> <a href="mailto:hello@welcometour.com">hello@welcometour.com</a></p>
+      <p><strong>Address:</strong> Vizag, Andhra Pradesh</p>
+    </section>
+
+    <div class="card center" style="margin-top:18px">
+      <h2>Thank You</h2>
+      <p>For more information contact us. We look forward to helping you explore the world!</p>
+    </div>
+
+    <footer>Studio Shodwe — Presented by Liceria Group</footer>
+  </div>
+</body>
+</html>
